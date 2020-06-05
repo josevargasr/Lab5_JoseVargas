@@ -69,7 +69,7 @@ public class Escuadron {
 
     @Override
     public String toString() {
-        return "Nombre = " + nombre + ", Base = " + base;
+        return nombre + "(" + base + ")";
     }
     
     

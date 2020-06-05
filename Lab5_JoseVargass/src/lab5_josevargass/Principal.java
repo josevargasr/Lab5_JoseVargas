@@ -5,8 +5,11 @@
  */
 package lab5_josevargass;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -46,11 +49,59 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jl_escuadrones = new javax.swing.JList<>();
         jd_ag_super = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        cb_escuadron = new javax.swing.JComboBox<>();
+        tf_poder_sup = new javax.swing.JTextField();
+        tf_debi_sup = new javax.swing.JTextField();
+        tf_nom_sup = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        tf_fuerza_sup = new javax.swing.JTextField();
+        tf_agfis_sup = new javax.swing.JTextField();
+        tf_agment_sup = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         jd_ver_super = new javax.swing.JDialog();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jl_supers = new javax.swing.JList<>();
         jd_ag_villa = new javax.swing.JDialog();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        cb_escuadron1 = new javax.swing.JComboBox<>();
+        tf_poder_sup1 = new javax.swing.JTextField();
+        tf_debi_sup1 = new javax.swing.JTextField();
+        tf_nom_sup1 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        tf_fuerza_sup1 = new javax.swing.JTextField();
+        tf_agfis_sup1 = new javax.swing.JTextField();
+        tf_agment_sup1 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         jd_ver_villa = new javax.swing.JDialog();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jl_villa = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
         jMenuBar1 = new javax.swing.JMenuBar();
         escuad = new javax.swing.JMenu();
         agregar_esc = new javax.swing.JMenuItem();
@@ -179,48 +230,378 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel7.setText("Agregar Superhéroe");
+
+        jLabel8.setText("Nombre:");
+
+        jLabel10.setText("Poder:");
+
+        jLabel11.setText("Debilidad:");
+
+        jLabel12.setText("Escuadron:");
+
+        jLabel14.setText("Fuerza:");
+
+        jLabel15.setText("Agilidad Fisica:");
+
+        jLabel16.setText("Agilidad Mental:");
+
+        tf_fuerza_sup.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf_fuerza_supKeyTyped(evt);
+            }
+        });
+
+        tf_agfis_sup.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf_agfis_supKeyTyped(evt);
+            }
+        });
+
+        tf_agment_sup.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf_agment_supKeyTyped(evt);
+            }
+        });
+
+        jButton2.setText("Agregar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tf_debi_sup, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel12))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf_poder_sup)
+                            .addComponent(cb_escuadron, 0, 147, Short.MAX_VALUE)))
+                    .addComponent(tf_nom_sup, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel13))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel14)
+                        .addComponent(jLabel15))
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tf_fuerza_sup, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_agfis_sup, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_agment_sup, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(299, 299, 299))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(240, 240, 240))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel7)
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(tf_nom_sup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14)
+                            .addComponent(tf_fuerza_sup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(tf_poder_sup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(24, 24, 24))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel15)
+                                    .addComponent(tf_agfis_sup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(tf_debi_sup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16)
+                            .addComponent(tf_agment_sup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cb_escuadron, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))))
+                .addGap(61, 61, 61)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jd_ag_superLayout = new javax.swing.GroupLayout(jd_ag_super.getContentPane());
         jd_ag_super.getContentPane().setLayout(jd_ag_superLayout);
         jd_ag_superLayout.setHorizontalGroup(
             jd_ag_superLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jd_ag_superLayout.setVerticalGroup(
             jd_ag_superLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel19.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel19.setText("Superhéroes");
+
+        jl_supers.setModel(new DefaultListModel());
+        jScrollPane4.setViewportView(jl_supers);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(jLabel19))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(188, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel19)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jd_ver_superLayout = new javax.swing.GroupLayout(jd_ver_super.getContentPane());
         jd_ver_super.getContentPane().setLayout(jd_ver_superLayout);
         jd_ver_superLayout.setHorizontalGroup(
             jd_ver_superLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jd_ver_superLayout.setVerticalGroup(
             jd_ver_superLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_ver_superLayout.createSequentialGroup()
+                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jLabel20.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel20.setText("Agregar Villano");
+
+        jLabel21.setText("Nombre:");
+
+        jLabel23.setText("Poder:");
+
+        jLabel24.setText("Debilidad:");
+
+        jLabel25.setText("Escuadron:");
+
+        jLabel27.setText("Fuerza:");
+
+        jLabel28.setText("Agilidad Fisica:");
+
+        jLabel29.setText("Agilidad Mental:");
+
+        tf_fuerza_sup1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf_fuerza_sup1KeyTyped(evt);
+            }
+        });
+
+        tf_agfis_sup1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf_agfis_sup1KeyTyped(evt);
+            }
+        });
+
+        tf_agment_sup1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf_agment_sup1KeyTyped(evt);
+            }
+        });
+
+        jButton3.setText("Agregar");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tf_debi_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel24)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel21)
+                                .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel25))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf_poder_sup1)
+                            .addComponent(cb_escuadron1, 0, 147, Short.MAX_VALUE)))
+                    .addComponent(tf_nom_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel26))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel27)
+                        .addComponent(jLabel28))
+                    .addComponent(jLabel29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tf_fuerza_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_agfis_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_agment_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(299, 299, 299))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addGap(280, 280, 280))))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(jLabel22))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel20)
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(tf_nom_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel27)
+                            .addComponent(tf_fuerza_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel23)
+                                    .addComponent(tf_poder_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(24, 24, 24))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel28)
+                                    .addComponent(tf_agfis_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel24)
+                            .addComponent(tf_debi_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29)
+                            .addComponent(tf_agment_sup1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cb_escuadron1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel25))))
+                .addGap(61, 61, 61)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jd_ag_villaLayout = new javax.swing.GroupLayout(jd_ag_villa.getContentPane());
         jd_ag_villa.getContentPane().setLayout(jd_ag_villaLayout);
         jd_ag_villaLayout.setHorizontalGroup(
             jd_ag_villaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jd_ag_villaLayout.setVerticalGroup(
             jd_ag_villaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel30.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel30.setText("Villanos");
+
+        jl_villa.setModel(new DefaultListModel());
+        jScrollPane5.setViewportView(jl_villa);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(jLabel30)))
+                .addContainerGap(188, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel30)
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jd_ver_villaLayout = new javax.swing.GroupLayout(jd_ver_villa.getContentPane());
         jd_ver_villa.getContentPane().setLayout(jd_ver_villaLayout);
         jd_ver_villaLayout.setHorizontalGroup(
             jd_ver_villaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jd_ver_villaLayout.setVerticalGroup(
             jd_ver_villaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_ver_villaLayout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -231,21 +612,31 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Avengers Simulator");
 
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Escuadrones");
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane6.setViewportView(jTree1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(211, Short.MAX_VALUE)
+                .addContainerGap(206, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(196, 196, 196))
+                .addGap(201, 201, 201))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(292, 292, 292)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(230, 230, 230)
+                .addGap(80, 80, 80)
                 .addComponent(jLabel2)
-                .addContainerGap(343, Short.MAX_VALUE))
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         escuad.setText("Escuadrones");
@@ -299,6 +690,11 @@ public class Principal extends javax.swing.JFrame {
         villanos.add(agregar_villa);
 
         ver_villa.setText("Ver Villanos");
+        ver_villa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ver_villaActionPerformed(evt);
+            }
+        });
         villanos.add(ver_villa);
 
         jMenuBar1.add(villanos);
@@ -334,23 +730,36 @@ public class Principal extends javax.swing.JFrame {
     private void agregar_escActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_escActionPerformed
         jd_ag_esc.setVisible(true);
         jd_ag_esc.setLocationRelativeTo(this);
+        jd_ag_esc.pack();
+        
     }//GEN-LAST:event_agregar_escActionPerformed
 
     private void agregar_superActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_superActionPerformed
         jd_ag_super.setVisible(true);
         jd_ag_super.setLocationRelativeTo(this);
+        jd_ag_super.pack();
+        
     }//GEN-LAST:event_agregar_superActionPerformed
 
     private void ver_superActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_superActionPerformed
-        // TODO add your handling code here:
+        jd_ver_super.setVisible(true);
+        jd_ver_super.setLocationRelativeTo(this);
+        jd_ver_super.pack();
+        
     }//GEN-LAST:event_ver_superActionPerformed
 
     private void agregar_villaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_villaActionPerformed
-        // TODO add your handling code here:
+        jd_ag_villa.setVisible(true);
+        jd_ag_villa.setLocationRelativeTo(this);
+        jd_ag_villa.pack();
+        
     }//GEN-LAST:event_agregar_villaActionPerformed
 
     private void ver_escActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_escActionPerformed
         jd_ver_esc.setVisible(true);
+        jd_ver_esc.setLocationRelativeTo(this);
+        jd_ver_esc.pack();
+        
     }//GEN-LAST:event_ver_escActionPerformed
 
     private void empezar_simuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empezar_simuActionPerformed
@@ -364,9 +773,111 @@ public class Principal extends javax.swing.JFrame {
         modelo.addElement(new Escuadron(tf_nombre_esc.getText(),
                 tf_lugarbase.getText(),
                 (String) cb_tipo_esc.getSelectedItem()));
-        JOptionPane.showMessageDialog(this, "Se agregó el escuadrón con éxito!");
+        
+        DefaultTreeModel m = (DefaultTreeModel) jTree1.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
+        DefaultMutableTreeNode nodo_escuadron;
+        nodo_escuadron = new DefaultMutableTreeNode(new Escuadron(tf_nombre_esc.getText(),tf_lugarbase.getText(),(String) cb_tipo_esc.getSelectedItem()));
+        raiz.add(nodo_escuadron);
+        m.reload();
+        
+        if (cb_tipo_esc.getSelectedIndex() == 0) {
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_escuadron.getModel();
+            dc.addElement(new Escuadron(tf_nombre_esc.getText(),
+                    tf_lugarbase.getText(),
+                    (String) cb_tipo_esc.getSelectedItem()));
+        }else{
+            DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_escuadron1.getModel();
+            dc.addElement(new Escuadron(tf_nombre_esc.getText(),
+                    tf_lugarbase.getText(),
+                    (String) cb_tipo_esc.getSelectedItem()));
+        }
+        JOptionPane.showMessageDialog(jd_ag_esc, "Se agregó el escuadrón con éxito!");
         jd_ag_esc.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void tf_fuerza_supKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_fuerza_supKeyTyped
+        if (!Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf_fuerza_supKeyTyped
+
+    private void tf_agfis_supKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_agfis_supKeyTyped
+        if (!Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf_agfis_supKeyTyped
+
+    private void tf_agment_supKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_agment_supKeyTyped
+        if (!Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf_agment_supKeyTyped
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        if (Integer.parseInt(tf_fuerza_sup.getText()) + Integer.parseInt(tf_agfis_sup.getText()) + Integer.parseInt(tf_agment_sup.getText()) == 100) {
+            DefaultListModel modelo2
+                    = (DefaultListModel) jl_supers.getModel();
+            modelo2.addElement(new Superheroe(tf_nom_sup.getText(), tf_poder_sup.getText(), tf_debi_sup.getText(), ((Escuadron)cb_escuadron.getSelectedItem()).getNombre(), Integer.parseInt(tf_fuerza_sup.getText()), Integer.parseInt(tf_agfis_sup.getText()), Integer.parseInt(tf_agment_sup.getText())));
+            //((Escuadron) cb_escuadron.getSelectedItem()).getMiembros().add(new Superheroe(tf_nom_sup.getText(), tf_poder_sup.getText(), tf_debi_sup.getText(), (Escuadron) cb_escuadron.getSelectedItem(), Integer.parseInt(tf_fuerza_sup.getText()), Integer.parseInt(tf_agfis_sup.getText()), Integer.parseInt(tf_agment_sup.getText())));
+            DefaultTreeModel modeloARBOL
+                    = (DefaultTreeModel) jTree1.getModel();
+            DefaultMutableTreeNode raiz
+                    = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals(((Escuadron)cb_escuadron.getSelectedItem()).getNombre())) {
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(new Superheroe(tf_nom_sup.getText(), tf_poder_sup.getText(), tf_debi_sup.getText(), ((Escuadron)cb_escuadron.getSelectedItem()).getNombre(), Integer.parseInt(tf_fuerza_sup.getText()), Integer.parseInt(tf_agfis_sup.getText()), Integer.parseInt(tf_agment_sup.getText())));
+                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(n);
+                }
+            }
+            JOptionPane.showMessageDialog(jd_ag_super, "Se agregó el superhéroe con éxito!");
+            jd_ag_super.dispose();
+        }else{
+            JOptionPane.showMessageDialog(jd_ag_super, "No tienes lo suficiente para ser un superhéroe");
+        }
+        
+       
+
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void tf_fuerza_sup1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_fuerza_sup1KeyTyped
+        if (!Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf_fuerza_sup1KeyTyped
+
+    private void tf_agfis_sup1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_agfis_sup1KeyTyped
+        if (!Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf_agfis_sup1KeyTyped
+
+    private void tf_agment_sup1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_agment_sup1KeyTyped
+        if (!Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf_agment_sup1KeyTyped
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        if (Integer.parseInt(tf_fuerza_sup1.getText()) + Integer.parseInt(tf_agfis_sup1.getText()) + Integer.parseInt(tf_agment_sup1.getText()) == 100) {
+            DefaultListModel modelo2
+                    = (DefaultListModel) jl_villa.getModel();
+            modelo2.addElement(new Villano(tf_nom_sup1.getText(), tf_poder_sup1.getText(), tf_debi_sup1.getText(), (Escuadron) cb_escuadron1.getSelectedItem(), Integer.parseInt(tf_fuerza_sup1.getText()), Integer.parseInt(tf_agfis_sup1.getText()), Integer.parseInt(tf_agment_sup1.getText())));
+            //((Escuadron) cb_escuadron.getSelectedItem()).getMiembros().add(new Superheroe(tf_nom_sup.getText(), tf_poder_sup.getText(), tf_debi_sup.getText(), (Escuadron) cb_escuadron.getSelectedItem(), Integer.parseInt(tf_fuerza_sup.getText()), Integer.parseInt(tf_agfis_sup.getText()), Integer.parseInt(tf_agment_sup.getText())));
+            JOptionPane.showMessageDialog(jd_ag_villa, "Se agregó el villano con éxito!");
+            jd_ag_villa.dispose();
+        }else{
+            JOptionPane.showMessageDialog(jd_ag_villa, "No tienes lo suficiente para ser un superhéroe");
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void ver_villaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ver_villaActionPerformed
+        jd_ver_villa.setVisible(true);
+        jd_ver_villa.setLocationRelativeTo(this);
+        jd_ver_villa.pack();
+        
+        
+    }//GEN-LAST:event_ver_villaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -407,21 +918,61 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem agregar_esc;
     private javax.swing.JMenuItem agregar_super;
     private javax.swing.JMenuItem agregar_villa;
+    private javax.swing.JComboBox<String> cb_escuadron;
+    private javax.swing.JComboBox<String> cb_escuadron1;
     private javax.swing.JComboBox<String> cb_tipo_esc;
     private javax.swing.JMenuItem empezar_simu;
     private javax.swing.JMenu escuad;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTree jTree1;
     private javax.swing.JDialog jd_ag_esc;
     private javax.swing.JDialog jd_ag_super;
     private javax.swing.JDialog jd_ag_villa;
@@ -429,10 +980,26 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_ver_super;
     private javax.swing.JDialog jd_ver_villa;
     private javax.swing.JList<String> jl_escuadrones;
+    private javax.swing.JList<String> jl_escuadrones1;
+    private javax.swing.JList<String> jl_escuadrones2;
+    private javax.swing.JList<String> jl_supers;
+    private javax.swing.JList<String> jl_villa;
     private javax.swing.JMenu simulacion;
     private javax.swing.JMenu supers;
+    private javax.swing.JTextField tf_agfis_sup;
+    private javax.swing.JTextField tf_agfis_sup1;
+    private javax.swing.JTextField tf_agment_sup;
+    private javax.swing.JTextField tf_agment_sup1;
+    private javax.swing.JTextField tf_debi_sup;
+    private javax.swing.JTextField tf_debi_sup1;
+    private javax.swing.JTextField tf_fuerza_sup;
+    private javax.swing.JTextField tf_fuerza_sup1;
     private javax.swing.JTextField tf_lugarbase;
+    private javax.swing.JTextField tf_nom_sup;
+    private javax.swing.JTextField tf_nom_sup1;
     private javax.swing.JTextField tf_nombre_esc;
+    private javax.swing.JTextField tf_poder_sup;
+    private javax.swing.JTextField tf_poder_sup1;
     private javax.swing.JMenuItem ver_esc;
     private javax.swing.JMenuItem ver_super;
     private javax.swing.JMenuItem ver_villa;
