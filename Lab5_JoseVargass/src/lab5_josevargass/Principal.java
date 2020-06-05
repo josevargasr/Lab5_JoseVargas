@@ -98,6 +98,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jl_villa = new javax.swing.JList<>();
+        popup_table = new javax.swing.JPopupMenu();
+        mi_verdatos = new javax.swing.JMenuItem();
+        mi_lider = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -604,9 +607,15 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        mi_verdatos.setText("Ver Datos");
+        popup_table.add(mi_verdatos);
+
+        mi_lider.setText("Hacer Lider de Escuadrón");
+        popup_table.add(mi_lider);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 51, 0));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -614,6 +623,11 @@ public class Principal extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Escuadrones");
         jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jTree1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTree1MouseClicked(evt);
+            }
+        });
         jScrollPane6.setViewportView(jTree1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -777,7 +791,7 @@ public class Principal extends javax.swing.JFrame {
         DefaultTreeModel m = (DefaultTreeModel) jTree1.getModel();
         DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
         DefaultMutableTreeNode nodo_escuadron;
-        nodo_escuadron = new DefaultMutableTreeNode(new Escuadron(tf_nombre_esc.getText(),tf_lugarbase.getText(),(String) cb_tipo_esc.getSelectedItem()));
+        nodo_escuadron = new DefaultMutableTreeNode(tf_nombre_esc.getText());
         raiz.add(nodo_escuadron);
         m.reload();
         
@@ -819,17 +833,21 @@ public class Principal extends javax.swing.JFrame {
             DefaultListModel modelo2
                     = (DefaultListModel) jl_supers.getModel();
             modelo2.addElement(new Superheroe(tf_nom_sup.getText(), tf_poder_sup.getText(), tf_debi_sup.getText(), ((Escuadron)cb_escuadron.getSelectedItem()).getNombre(), Integer.parseInt(tf_fuerza_sup.getText()), Integer.parseInt(tf_agfis_sup.getText()), Integer.parseInt(tf_agment_sup.getText())));
-            //((Escuadron) cb_escuadron.getSelectedItem()).getMiembros().add(new Superheroe(tf_nom_sup.getText(), tf_poder_sup.getText(), tf_debi_sup.getText(), (Escuadron) cb_escuadron.getSelectedItem(), Integer.parseInt(tf_fuerza_sup.getText()), Integer.parseInt(tf_agfis_sup.getText()), Integer.parseInt(tf_agment_sup.getText())));
+            ((Escuadron)cb_escuadron.getSelectedItem()).getMiembros().add(new Superheroe(tf_nom_sup.getText(), tf_poder_sup.getText(), tf_debi_sup.getText(), ((Escuadron)cb_escuadron.getSelectedItem()).getNombre(), Integer.parseInt(tf_fuerza_sup.getText()), Integer.parseInt(tf_agfis_sup.getText()), Integer.parseInt(tf_agment_sup.getText())));
+            ((Escuadron)cb_escuadron.getSelectedItem()).setLider(tf_nom_sup.getText());
             DefaultTreeModel modeloARBOL
                     = (DefaultTreeModel) jTree1.getModel();
             DefaultMutableTreeNode raiz
                     = (DefaultMutableTreeNode) modeloARBOL.getRoot();
             for (int i = 0; i < raiz.getChildCount(); i++) {
                 if (raiz.getChildAt(i).toString().equals(((Escuadron)cb_escuadron.getSelectedItem()).getNombre())) {
-                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(new Superheroe(tf_nom_sup.getText(), tf_poder_sup.getText(), tf_debi_sup.getText(), ((Escuadron)cb_escuadron.getSelectedItem()).getNombre(), Integer.parseInt(tf_fuerza_sup.getText()), Integer.parseInt(tf_agfis_sup.getText()), Integer.parseInt(tf_agment_sup.getText())));
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(tf_nom_sup.getText());
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(tf_poder_sup.getText());
                     ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(n);
+                    n.add(p);
                 }
             }
+            modeloARBOL.reload();
             JOptionPane.showMessageDialog(jd_ag_super, "Se agregó el superhéroe con éxito!");
             jd_ag_super.dispose();
         }else{
@@ -862,12 +880,27 @@ public class Principal extends javax.swing.JFrame {
         if (Integer.parseInt(tf_fuerza_sup1.getText()) + Integer.parseInt(tf_agfis_sup1.getText()) + Integer.parseInt(tf_agment_sup1.getText()) == 100) {
             DefaultListModel modelo2
                     = (DefaultListModel) jl_villa.getModel();
-            modelo2.addElement(new Villano(tf_nom_sup1.getText(), tf_poder_sup1.getText(), tf_debi_sup1.getText(), (Escuadron) cb_escuadron1.getSelectedItem(), Integer.parseInt(tf_fuerza_sup1.getText()), Integer.parseInt(tf_agfis_sup1.getText()), Integer.parseInt(tf_agment_sup1.getText())));
-            //((Escuadron) cb_escuadron.getSelectedItem()).getMiembros().add(new Superheroe(tf_nom_sup.getText(), tf_poder_sup.getText(), tf_debi_sup.getText(), (Escuadron) cb_escuadron.getSelectedItem(), Integer.parseInt(tf_fuerza_sup.getText()), Integer.parseInt(tf_agfis_sup.getText()), Integer.parseInt(tf_agment_sup.getText())));
+            modelo2.addElement(new Villano(tf_nom_sup1.getText(), tf_poder_sup1.getText(), tf_debi_sup1.getText(), ((Escuadron)cb_escuadron1.getSelectedItem()).getNombre(), Integer.parseInt(tf_fuerza_sup1.getText()), Integer.parseInt(tf_agfis_sup1.getText()), Integer.parseInt(tf_agment_sup1.getText())));
+            ((Escuadron)cb_escuadron1.getSelectedItem()).getMiembros().add(new Villano(tf_nom_sup1.getText(), tf_poder_sup1.getText(), tf_debi_sup1.getText(), ((Escuadron)cb_escuadron1.getSelectedItem()).getNombre(), Integer.parseInt(tf_fuerza_sup1.getText()), Integer.parseInt(tf_agfis_sup1.getText()), Integer.parseInt(tf_agment_sup1.getText())));
+            ((Escuadron)cb_escuadron1.getSelectedItem()).setLider(tf_nom_sup1.getText());
+            DefaultTreeModel modeloARBOL
+                    = (DefaultTreeModel) jTree1.getModel();
+            DefaultMutableTreeNode raiz
+                    = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals(((Escuadron)cb_escuadron1.getSelectedItem()).getNombre())) {
+                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(tf_nom_sup1.getText());
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(tf_poder_sup1.getText());
+                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(n);
+                    n.add(p);
+                }
+            }
+            modeloARBOL.reload();
+            
             JOptionPane.showMessageDialog(jd_ag_villa, "Se agregó el villano con éxito!");
             jd_ag_villa.dispose();
         }else{
-            JOptionPane.showMessageDialog(jd_ag_villa, "No tienes lo suficiente para ser un superhéroe");
+            JOptionPane.showMessageDialog(jd_ag_villa, "No tienes lo suficiente para ser un villano");
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
@@ -878,6 +911,15 @@ public class Principal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_ver_villaActionPerformed
+
+    private void jTree1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTree1MouseClicked
+        if (evt.isMetaDown()) {
+            int row = jTree1.getClosestRowForLocation(
+                    evt.getX(), evt.getY());
+            jTree1.setSelectionRow(row);
+            popup_table.show(evt.getComponent(),evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_jTree1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -984,6 +1026,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JList<String> jl_escuadrones2;
     private javax.swing.JList<String> jl_supers;
     private javax.swing.JList<String> jl_villa;
+    private javax.swing.JMenuItem mi_lider;
+    private javax.swing.JMenuItem mi_verdatos;
+    private javax.swing.JPopupMenu popup_table;
     private javax.swing.JMenu simulacion;
     private javax.swing.JMenu supers;
     private javax.swing.JTextField tf_agfis_sup;

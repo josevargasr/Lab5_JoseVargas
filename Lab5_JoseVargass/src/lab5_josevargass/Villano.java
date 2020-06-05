@@ -13,7 +13,7 @@ public class Villano {
     private String nombre;
     private String poder;
     private String debilidad;
-    private Escuadron escuadron;
+    private String escuadron;
     private int fuerza;
     private int a_fisica;
     private int a_mental;
@@ -21,7 +21,7 @@ public class Villano {
     public Villano() {
     }
 
-    public Villano(String nombre, String poder, String debilidad, Escuadron escuadron, int fuerza, int a_fisica, int a_mental) {
+    public Villano(String nombre, String poder, String debilidad, String escuadron, int fuerza, int a_fisica, int a_mental) {
         this.nombre = nombre;
         this.poder = poder;
         this.debilidad = debilidad;
@@ -55,11 +55,11 @@ public class Villano {
         this.debilidad = debilidad;
     }
 
-    public Escuadron getEscuadron() {
+    public String getEscuadron() {
         return escuadron;
     }
 
-    public void setEscuadron(Escuadron escuadron) {
+    public void setEscuadron(String escuadron) {
         this.escuadron = escuadron;
     }
 

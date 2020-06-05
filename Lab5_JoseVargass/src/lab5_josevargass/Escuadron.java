@@ -16,7 +16,7 @@ public class Escuadron {
     private String base;
     private String lider;
     private String tipo;
-    private ArrayList miembros;
+    private ArrayList miembros  = new ArrayList();
 
     public Escuadron() {
     }
