@@ -10,13 +10,14 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import java.util.Random;
 
 /**
  *
  * @author josevargas
  */
 public class Principal extends javax.swing.JFrame {
-
+static Random r = new Random();
     /**
      * Creates new form Principal
      */
@@ -48,6 +49,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jl_escuadrones = new javax.swing.JList<>();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jd_ag_super = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -101,6 +104,24 @@ public class Principal extends javax.swing.JFrame {
         popup_table = new javax.swing.JPopupMenu();
         mi_verdatos = new javax.swing.JMenuItem();
         mi_lider = new javax.swing.JMenuItem();
+        jd_sim = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        cb_supers = new javax.swing.JComboBox<>();
+        cb_villanos = new javax.swing.JComboBox<>();
+        jButton4 = new javax.swing.JButton();
+        jd_mod_esc = new javax.swing.JDialog();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        tf_nombre_esc1 = new javax.swing.JTextField();
+        tf_lugarbase1 = new javax.swing.JTextField();
+        cb_tipo_esc1 = new javax.swing.JComboBox<>();
+        jButton7 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -198,6 +219,20 @@ public class Principal extends javax.swing.JFrame {
         jl_escuadrones.setModel(new DefaultListModel());
         jScrollPane1.setViewportView(jl_escuadrones);
 
+        jButton5.setText("Modificar");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jButton6.setText("Eliminar");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -211,6 +246,12 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(139, 139, 139)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(174, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(jButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton6)
+                .addGap(140, 140, 140))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,7 +260,11 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61))
         );
 
         javax.swing.GroupLayout jd_ver_escLayout = new javax.swing.GroupLayout(jd_ver_esc.getContentPane());
@@ -230,7 +275,9 @@ public class Principal extends javax.swing.JFrame {
         );
         jd_ver_escLayout.setVerticalGroup(
             jd_ver_escLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jd_ver_escLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
@@ -613,6 +660,152 @@ public class Principal extends javax.swing.JFrame {
         mi_lider.setText("Hacer Lider de Escuadrón");
         popup_table.add(mi_lider);
 
+        jLabel31.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel31.setText("Batalla Final");
+
+        jLabel32.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel32.setText("Escuadrón de Superhéroes:");
+
+        jLabel33.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel33.setText("Escuadrón de Villanos:");
+
+        jButton4.setText("Empezar");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cb_supers, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel32))
+                        .addGap(82, 82, 82)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cb_villanos, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel33)))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(266, 266, 266)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(164, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel31)
+                .addGap(265, 265, 265))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel31)
+                .addGap(63, 63, 63)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel33))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_supers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_villanos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(113, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jd_simLayout = new javax.swing.GroupLayout(jd_sim.getContentPane());
+        jd_sim.getContentPane().setLayout(jd_simLayout);
+        jd_simLayout.setHorizontalGroup(
+            jd_simLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_simLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jd_simLayout.setVerticalGroup(
+            jd_simLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel34.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel34.setText("Modificar Escuadrón");
+
+        jLabel35.setText("Nombre:");
+
+        jLabel36.setText("Lugar de Base:");
+
+        jLabel37.setText("Tipo:");
+
+        cb_tipo_esc1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Superhéroes", "Villanos" }));
+
+        jButton7.setText("Agregar");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel37))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_nombre_esc1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_lugarbase1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_tipo_esc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel34)))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(229, 229, 229)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel34)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(tf_nombre_esc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(tf_lugarbase1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(cb_tipo_esc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jd_mod_escLayout = new javax.swing.GroupLayout(jd_mod_esc.getContentPane());
+        jd_mod_esc.getContentPane().setLayout(jd_mod_escLayout);
+        jd_mod_escLayout.setHorizontalGroup(
+            jd_mod_escLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jd_mod_escLayout.setVerticalGroup(
+            jd_mod_escLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 0, 0));
@@ -777,7 +970,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_ver_escActionPerformed
 
     private void empezar_simuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empezar_simuActionPerformed
-        // TODO add your handling code here:
+        jd_sim.setVisible(true);
+        jd_sim.setLocationRelativeTo(this);
+        jd_sim.pack();
     }//GEN-LAST:event_empezar_simuActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -797,14 +992,14 @@ public class Principal extends javax.swing.JFrame {
         
         if (cb_tipo_esc.getSelectedIndex() == 0) {
             DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_escuadron.getModel();
-            dc.addElement(new Escuadron(tf_nombre_esc.getText(),
-                    tf_lugarbase.getText(),
-                    (String) cb_tipo_esc.getSelectedItem()));
+            dc.addElement(new Escuadron(tf_nombre_esc.getText(),tf_lugarbase.getText(),(String) cb_tipo_esc.getSelectedItem()));
+            DefaultComboBoxModel bc = (DefaultComboBoxModel) cb_supers.getModel();
+            bc.addElement(new Escuadron(tf_nombre_esc.getText(),tf_lugarbase.getText(),(String) cb_tipo_esc.getSelectedItem()));
         }else{
             DefaultComboBoxModel dc = (DefaultComboBoxModel) cb_escuadron1.getModel();
-            dc.addElement(new Escuadron(tf_nombre_esc.getText(),
-                    tf_lugarbase.getText(),
-                    (String) cb_tipo_esc.getSelectedItem()));
+            dc.addElement(new Escuadron(tf_nombre_esc.getText(),tf_lugarbase.getText(),(String) cb_tipo_esc.getSelectedItem()));
+            DefaultComboBoxModel bc = (DefaultComboBoxModel) cb_villanos.getModel();
+            bc.addElement(new Escuadron(tf_nombre_esc.getText(),tf_lugarbase.getText(),(String) cb_tipo_esc.getSelectedItem()));
         }
         JOptionPane.showMessageDialog(jd_ag_esc, "Se agregó el escuadrón con éxito!");
         jd_ag_esc.dispose();
@@ -921,6 +1116,53 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTree1MouseClicked
 
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        if(cb_supers.getSelectedIndex()>=0 || cb_villanos.getSelectedIndex()>=0){
+            int random = 1 + r.nextInt(2);
+            if(random == 1){
+                ((Escuadron)cb_supers.getSelectedItem()).getLider();
+            }else if(random == 2){
+                
+            }else{
+                
+            }
+        }else{
+            JOptionPane.showMessageDialog(jd_sim, "Ocupa seleccionar dos escuadrones para la batalla");
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        if (jl_escuadrones.getSelectedIndex() >= 0) {
+            jd_mod_esc.setVisible(true);
+            jd_mod_esc.setLocationRelativeTo(this);
+            jd_mod_esc.pack();
+            
+        }else{
+            JOptionPane.showMessageDialog(jd_ver_esc, "Ocupa seleccionar un escuadron para modificar");
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        if (jl_escuadrones.getSelectedIndex() >= 0) {
+            int response = JOptionPane.showConfirmDialog(
+                this,
+                "Seguro de Eliminar?",
+                "Confirm",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+
+            if (response == JOptionPane.OK_OPTION) {
+                jl_escuadrones.remove(jl_escuadrones.getSelectedIndex());
+            }
+        }else{
+            JOptionPane.showMessageDialog(jd_ver_esc, "Ocupa seleccionar un escuadron para eliminar");
+        }
+    }//GEN-LAST:event_jButton6MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -962,12 +1204,19 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem agregar_villa;
     private javax.swing.JComboBox<String> cb_escuadron;
     private javax.swing.JComboBox<String> cb_escuadron1;
+    private javax.swing.JComboBox<String> cb_supers;
     private javax.swing.JComboBox<String> cb_tipo_esc;
+    private javax.swing.JComboBox<String> cb_tipo_esc1;
+    private javax.swing.JComboBox<String> cb_villanos;
     private javax.swing.JMenuItem empezar_simu;
     private javax.swing.JMenu escuad;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -992,6 +1241,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1000,6 +1256,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1018,6 +1276,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_ag_esc;
     private javax.swing.JDialog jd_ag_super;
     private javax.swing.JDialog jd_ag_villa;
+    private javax.swing.JDialog jd_mod_esc;
+    private javax.swing.JDialog jd_sim;
     private javax.swing.JDialog jd_ver_esc;
     private javax.swing.JDialog jd_ver_super;
     private javax.swing.JDialog jd_ver_villa;
@@ -1040,9 +1300,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_fuerza_sup;
     private javax.swing.JTextField tf_fuerza_sup1;
     private javax.swing.JTextField tf_lugarbase;
+    private javax.swing.JTextField tf_lugarbase1;
     private javax.swing.JTextField tf_nom_sup;
     private javax.swing.JTextField tf_nom_sup1;
     private javax.swing.JTextField tf_nombre_esc;
+    private javax.swing.JTextField tf_nombre_esc1;
     private javax.swing.JTextField tf_poder_sup;
     private javax.swing.JTextField tf_poder_sup1;
     private javax.swing.JMenuItem ver_esc;
